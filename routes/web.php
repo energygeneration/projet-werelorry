@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,11 @@ Route::get('/apropos',[FrontendController::class,'apropos'])->name('APROPOS') ;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/admin',[App\Http\Controllers\Admin\LoginController::class,'showLoginForm'])->name('admin.login');
+//Route::post('admin',[App\Http\Controllers\Admin\LoginController::class,'login']);
+//Route::get('admin/home',[App\Http\Controllers\AdminController::class,'index'])->name('home');
 
 
-
-Route::get('/brouillon', function () {
-   return view('brouillon');
-});
+Route::get('/ajout', function () {
+   return view('ajout');
+})->name('ajout');

@@ -10,9 +10,9 @@ class FrontendController extends Controller
 
     public function index()
     {
-       $alltrips= Trip::all();
 
-        return view('index',['trips'=>$alltrips]);
+
+        return view('index');
     }
     public function apropos()
     {
