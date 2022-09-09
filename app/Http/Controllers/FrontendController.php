@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Trip;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -18,4 +17,6 @@ class FrontendController extends Controller
     {
         return view('apropos');
     }
+
+    
 }

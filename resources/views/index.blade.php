@@ -4,7 +4,7 @@
 
 @section('content')
 
-   <div class="main">
+
 
         <header class="acceuil-bg-image d-block mx-lg-auto img-fluid">
               <div class="container-fluid color-cover-cendre h-100">

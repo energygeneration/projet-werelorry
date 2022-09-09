@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\Admin\LoginController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,15 +21,18 @@ use App\Http\Controllers\Admin\LoginController;
 
 Route::get('/',[FrontendController::class,'index'])->name('ACCEUIL');
 Route::get('/apropos',[FrontendController::class,'apropos'])->name('APROPOS') ;
-
+/*******************connexion**********************/
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/admin',[App\Http\Controllers\Admin\LoginController::class,'showLoginForm'])->name('admin.login');
-//Route::post('admin',[App\Http\Controllers\Admin\LoginController::class,'login']);
-//Route::get('admin/home',[App\Http\Controllers\AdminController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 
 
 Route::get('/ajout', function () {
    return view('ajout');
 })->name('ajout');
+/**************************contact********************************/
+Route::post('footer', [ContactsController::class, 'store'])->name('store');
+
+Route::get('footer', [ContactsController::class, 'create'])->name('footer.create');
+
